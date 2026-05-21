@@ -1,0 +1,4 @@
+{"id": "e740509c-3562-4be9-b65b-d5617d807301", "timestamp": "2026-05-21T07:40:24Z", "level": "info", "message": "Step started: prepare_branch", "stepKey": "prepare_branch"}
+{"id": "93e4a925-64fd-4bc4-9feb-41f989151245", "timestamp": "2026-05-21T07:40:24Z", "level": "info", "message": "Preparing isolated git worktree and feature branch…", "stepKey": "prepare_branch"}
+{"id": "2fdaf13f-864b-480a-af60-5feb7e49eff6", "timestamp": "2026-05-21T07:40:24Z", "level": "error", "message": "Git prepare failed: The selected project has uncommitted changes. Resolve them before starting an execution worktree.", "stepKey": "prepare_branch"}
+{"id": "e5ebafe3-5d03-493e-8b8c-f4a60828fef0", "timestamp": "2026-05-21T07:40:24Z", "level": "info", "message": "Step failed: prepare_branch: The selected project has uncommitted changes. Resolve them before starting an execution worktree.", "stepKey": "prepare_branch"}

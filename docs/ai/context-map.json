@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "projectName": "react-playwright-demo",
+  "agentEntryPoints": {
+    "sdlcRules": ".opencode/agents/_sdlc-rules.md",
+    "governance": ".opencode/agents/governance-agent.md",
+    "projectContext": "docs/ai/project-context.md",
+    "contextMap": "docs/ai/context-map.json"
+  },
+  "stack": {
+    "framework": "React 19 SPA",
+    "language": "JavaScript + JSX",
+    "router": "react-router-dom 7",
+    "buildTool": "Vite 8",
+    "testFramework": "Playwright 1.59+",
+    "linting": "ESLint 9 flat config"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "test": "npx playwright test"
+  },
+  "keyPaths": {
+    "entry": "src/main.jsx",
+    "router": "src/App.jsx",
+    "pages": "src/pages/",
+    "components": "src/components/",
+    "tests": "tests/",
+    "config": {
+      "vite": "vite.config.js",
+      "eslint": "eslint.config.js",
+      "playwright": "playwright.config.ts"
+    }
+  },
+  "conventions": {
+    "components": "PascalCase .jsx",
+    "tests": "*.spec.ts or *.spec.js",
+    "locators": "data-testid kebab-case"
+  },
+  "notes": [
+    "Inline style props are the established styling pattern.",
+    "data-testid attributes are mandatory for testable elements.",
+    "No backend API; data is static/mock only.",
+    "No 'start' script in package.json; playwright webServer references 'npm run start'.",
+    "Dead code: src/components/dashboard.jsx (lowercase, unused).",
+    "Filename mismatch: StateCard.jsx exported as StatCard."
+  ]
+}

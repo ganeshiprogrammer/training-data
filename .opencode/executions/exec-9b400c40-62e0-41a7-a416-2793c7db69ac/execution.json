@@ -1,0 +1,146 @@
+{
+  "id": "exec-9b400c40-62e0-41a7-a416-2793c7db69ac",
+  "projectId": "project-fc2153ed-7930-4825-97b3-9cdc695fb754",
+  "projectPath": "/Users/sameert/Documents/projects/learning/training-data",
+  "storyKey": "TS-01",
+  "storyTitle": "Add Customer List Widget to Dashboard Page",
+  "storyDescription": "User Story\nAs an administrator using AdminPro,\n\nI want to view a summary list of customers directly on the Dashboard page,\n\nSo that I can quickly see recent customer overviews without having to navigate away to the dedicated Customers tab.\n\nDescription & Scope\nWe need to add a new \"Recent Customers\" list widget to the main Dashboard view. Since the backend API endpoints for this data are still under development, this UI component should be populated entirely with mock data matching our current design system.\n\nThe widget should be placed below the existing metrics cards (or alongside the \"Recent Activity\" list, depending on the layout grid) and match the existing UI styling (clean white cards, specific typography, and standard avatar icons).\n\nUI & Design Specifications\nWidget Title: Recent Customers\n\nMock Data Fields per Row:\n\nAvatar: Circular badge with initials (e.g., \"DJ\" for David Jones), utilizing the existing theme colors (#3b82f6 or similar brand colors).\n\nCustomer Name: Bold text (e.g., David Jones).\n\nEmail Address: Secondary text below the name (e.g., david.j@example.com).\n\nStatus Badge: A small colored badge indicating account status (Active - Green, Pending - Yellow).\n\nList Limit: Display a maximum of 3 records to keep the dashboard concise.\n\nMock Data Payload (Frontend Implementation)\nPlease use this static JSON array within the component state to render the UI:\n\nJSON\n[\n  {\n    \"id\": 1,\n    \"name\": \"David Jones\",\n    \"initials\": \"DJ\",\n    \"email\": \"david.j@example.com\",\n    \"status\": \"Active\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Emma Watson\",\n    \"initials\": \"EW\",\n    \"email\": \"emma.w@example.com\",\n    \"status\": \"Active\"\n  },\n  {\n    \"id\": 3,\n    \"name\": \"Frank Miller\",\n    \"initials\": \"FM\",\n    \"email\": \"f.miller@example.com\",\n    \"status\": \"Pending\"\n  }\n]\nAcceptance Criteria\n[ ] UI Alignment: The widget seamlessly integrates into the dashboard layout and follows the styling of the \"Recent Activity\" section (consistent margins, borders, shadows, and fonts).\n\n[ ] Data Rendering: The widget successfully loops through and displays all 3 mock records.\n\n[ ] Status Badges: The status colors render correctly based on the mock data (Active = Green text/background, Pending = Yellow/Orange text/background).\n\n[ ] Responsiveness: The list scales correctly across standard desktop and laptop resolutions.\n\n[ ] No Backend Dependency: The component does not make any actual HTTP/API requests and relies purely on local state/mock files.",
+  "baseBranch": "main",
+  "branchName": "feature/TS-01-add-customer-list-widget-to-dashboard-page",
+  "worktreePath": null,
+  "provider": "opencode",
+  "mode": "fast_story",
+  "inputType": "jira_story",
+  "inputs": {
+    "storyDescription": "User Story\nAs an administrator using AdminPro,\n\nI want to view a summary list of customers directly on the Dashboard page,\n\nSo that I can quickly see recent customer overviews without having to navigate away to the dedicated Customers tab.\n\nDescription & Scope\nWe need to add a new \"Recent Customers\" list widget to the main Dashboard view. Since the backend API endpoints for this data are still under development, this UI component should be populated entirely with mock data matching our current design system.\n\nThe widget should be placed below the existing metrics cards (or alongside the \"Recent Activity\" list, depending on the layout grid) and match the existing UI styling (clean white cards, specific typography, and standard avatar icons).\n\nUI & Design Specifications\nWidget Title: Recent Customers\n\nMock Data Fields per Row:\n\nAvatar: Circular badge with initials (e.g., \"DJ\" for David Jones), utilizing the existing theme colors (#3b82f6 or similar brand colors).\n\nCustomer Name: Bold text (e.g., David Jones).\n\nEmail Address: Secondary text below the name (e.g., david.j@example.com).\n\nStatus Badge: A small colored badge indicating account status (Active - Green, Pending - Yellow).\n\nList Limit: Display a maximum of 3 records to keep the dashboard concise.\n\nMock Data Payload (Frontend Implementation)\nPlease use this static JSON array within the component state to render the UI:\n\nJSON\n[\n  {\n    \"id\": 1,\n    \"name\": \"David Jones\",\n    \"initials\": \"DJ\",\n    \"email\": \"david.j@example.com\",\n    \"status\": \"Active\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Emma Watson\",\n    \"initials\": \"EW\",\n    \"email\": \"emma.w@example.com\",\n    \"status\": \"Active\"\n  },\n  {\n    \"id\": 3,\n    \"name\": \"Frank Miller\",\n    \"initials\": \"FM\",\n    \"email\": \"f.miller@example.com\",\n    \"status\": \"Pending\"\n  }\n]\nAcceptance Criteria\n[ ] UI Alignment: The widget seamlessly integrates into the dashboard layout and follows the styling of the \"Recent Activity\" section (consistent margins, borders, shadows, and fonts).\n\n[ ] Data Rendering: The widget successfully loops through and displays all 3 mock records.\n\n[ ] Status Badges: The status colors render correctly based on the mock data (Active = Green text/background, Pending = Yellow/Orange text/background).\n\n[ ] Responsiveness: The list scales correctly across standard desktop and laptop resolutions.\n\n[ ] No Backend Dependency: The component does not make any actual HTTP/API requests and relies purely on local state/mock files.",
+    "storyKey": "TS-01",
+    "storyTitle": "Add Customer List Widget to Dashboard Page"
+  },
+  "context": {
+    "modeDependencies": {
+      "optionalMissingAgents": [],
+      "optionalMissingStageKeys": [],
+      "requiredMissingAgents": []
+    },
+    "models": {
+      "byStep": {
+        "ai_reviewer": "opencode/kimi-k2.6",
+        "code_implementer": "opencode/kimi-k2.6",
+        "commit_push": "opencode/kimi-k2.6",
+        "final_review": "opencode/kimi-k2.6",
+        "implementation_planner": "opencode/kimi-k2.6",
+        "prepare_branch": "opencode/kimi-k2.6",
+        "story_analyzer": "opencode/kimi-k2.6"
+      },
+      "defaultModel": "opencode/kimi-k2.6"
+    },
+    "testing": {
+      "runFullTestSuiteBeforeFinalReview": false
+    }
+  },
+  "status": "failed",
+  "currentStep": "prepare_branch",
+  "steps": [
+    {
+      "key": "prepare_branch",
+      "status": "failed",
+      "startedAt": "2026-05-21T07:40:24Z",
+      "completedAt": "2026-05-21T07:40:24Z",
+      "error": "The selected project has uncommitted changes. Resolve them before starting an execution worktree.",
+      "statusReason": null
+    },
+    {
+      "key": "story_analyzer",
+      "status": "pending",
+      "startedAt": null,
+      "completedAt": null,
+      "error": null,
+      "statusReason": null
+    },
+    {
+      "key": "implementation_planner",
+      "status": "pending",
+      "startedAt": null,
+      "completedAt": null,
+      "error": null,
+      "statusReason": null
+    },
+    {
+      "key": "code_implementer",
+      "status": "pending",
+      "startedAt": null,
+      "completedAt": null,
+      "error": null,
+      "statusReason": null
+    },
+    {
+      "key": "ai_reviewer",
+      "status": "pending",
+      "startedAt": null,
+      "completedAt": null,
+      "error": null,
+      "statusReason": null
+    },
+    {
+      "key": "final_review",
+      "status": "pending",
+      "startedAt": null,
+      "completedAt": null,
+      "error": null,
+      "statusReason": null
+    },
+    {
+      "key": "commit_push",
+      "status": "pending",
+      "startedAt": null,
+      "completedAt": null,
+      "error": null,
+      "statusReason": null
+    }
+  ],
+  "review": {
+    "enabled": false,
+    "autoFixEnabled": false,
+    "currentCycle": 0,
+    "maxCycles": 1
+  },
+  "files": {
+    "specFile": null,
+    "planFile": null,
+    "reviewFile": null,
+    "finalSummaryFile": null
+  },
+  "logs": [
+    {
+      "id": "e740509c-3562-4be9-b65b-d5617d807301",
+      "timestamp": "2026-05-21T07:40:24Z",
+      "level": "info",
+      "message": "Step started: prepare_branch",
+      "stepKey": "prepare_branch"
+    },
+    {
+      "id": "93e4a925-64fd-4bc4-9feb-41f989151245",
+      "timestamp": "2026-05-21T07:40:24Z",
+      "level": "info",
+      "message": "Preparing isolated git worktree and feature branch\u2026",
+      "stepKey": "prepare_branch"
+    },
+    {
+      "id": "2fdaf13f-864b-480a-af60-5feb7e49eff6",
+      "timestamp": "2026-05-21T07:40:24Z",
+      "level": "error",
+      "message": "Git prepare failed: The selected project has uncommitted changes. Resolve them before starting an execution worktree.",
+      "stepKey": "prepare_branch"
+    },
+    {
+      "id": "e5ebafe3-5d03-493e-8b8c-f4a60828fef0",
+      "timestamp": "2026-05-21T07:40:24Z",
+      "level": "info",
+      "message": "Step failed: prepare_branch: The selected project has uncommitted changes. Resolve them before starting an execution worktree.",
+      "stepKey": "prepare_branch"
+    }
+  ],
+  "error": "The selected project has uncommitted changes. Resolve them before starting an execution worktree.",
+  "createdAt": "2026-05-21T07:40:24Z",
+  "updatedAt": "2026-05-21T07:40:24Z"
+}

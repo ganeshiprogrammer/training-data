@@ -7,6 +7,7 @@ import { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import StatCard from "../components/StateCard";
 import RecentActivity from "../components/RecentActivity";
+import RecentCustomers from "../components/RecentCustomers";
 
 const stats = [
   {
@@ -49,6 +50,12 @@ const activities = [
   { id: 3, user: "Carol White", action: "Submitted a support ticket", time: "1 hr ago", avatar: "CW" },
   { id: 4, user: "David Lee", action: "Upgraded to Pro plan", time: "3 hr ago", avatar: "DL" },
   { id: 5, user: "Eva Martinez", action: "Cancelled subscription", time: "5 hr ago", avatar: "EM" },
+];
+
+const customers = [
+  { id: 1, name: "David Jones", avatar: "DJ", email: "david.j@example.com", status: "Active" },
+  { id: 2, name: "Emma Watson", avatar: "EW", email: "emma.w@example.com", status: "Active" },
+  { id: 3, name: "Frank Miller", avatar: "FM", email: "f.miller@example.com", status: "Pending" },
 ];
 
 export default function Dashboard() {
@@ -190,20 +197,37 @@ export default function Dashboard() {
           ))}
         </section>
 
-        {/* Recent Activity */}
-        <section data-testid="activity-section">
-          <h2 style={{ fontSize: "18px", fontWeight: 600, marginBottom: "16px", color: "#1a1d2e" }}>
-            Recent Activity
-          </h2>
+        {/* Widgets: Recent Activity + Recent Customers */}
+        <div
+          data-testid="dashboard-widgets"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: "24px",
+          }}
+        >
+          <section data-testid="activity-section" style={{ minWidth: 0 }}>
+            <h2 style={{ fontSize: "18px", fontWeight: 600, marginBottom: "16px", color: "#1a1d2e" }}>
+              Recent Activity
+            </h2>
 
-          {searchQuery && (
-            <p data-testid="search-results-count" style={{ fontSize: "13px", color: "#6b7280", marginBottom: "12px" }}>
-              Showing {filteredActivities.length} result(s) for "{searchQuery}"
-            </p>
-          )}
+            {searchQuery && (
+              <p data-testid="search-results-count" style={{ fontSize: "13px", color: "#6b7280", marginBottom: "12px" }}>
+                Showing {filteredActivities.length} result(s) for "{searchQuery}"
+              </p>
+            )}
 
-          <RecentActivity activities={filteredActivities} />
-        </section>
+            <RecentActivity activities={filteredActivities} />
+          </section>
+
+          <section data-testid="customers-section" style={{ minWidth: 0 }}>
+            <h2 style={{ fontSize: "18px", fontWeight: 600, marginBottom: "16px", color: "#1a1d2e" }}>
+              Recent Customers
+            </h2>
+
+            <RecentCustomers customers={customers} />
+          </section>
+        </div>
       </main>
     </div>
     </>

@@ -266,7 +266,47 @@ test.describe("Dashboard - Recent Activity", () => {
   });
 });
 
-// ─── GROUP 6: Screenshots ─────────────────────────────────────────────────────
+// ─── GROUP 6: Recent Customers Widget ─────────────────────────────────────────
+test.describe("Dashboard - Recent Customers", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto("/dashboard");
+  });
+
+  test("should display Recent Customers section title", async ({ page }) => {
+    await expect(page.getByTestId("customers-section")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Recent Customers" })).toBeVisible();
+  });
+
+  test("should render exactly 3 customer rows", async ({ page }) => {
+    await expect(page.getByTestId("customer-list")).toBeVisible();
+    await expect(page.getByTestId("customer-item-1")).toBeVisible();
+    await expect(page.getByTestId("customer-item-2")).toBeVisible();
+    await expect(page.getByTestId("customer-item-3")).toBeVisible();
+    await expect(page.locator('[data-testid^="customer-item-"]')).toHaveCount(3);
+  });
+
+  test("should show customer details and status badges", async ({ page }) => {
+    await expect(page.getByTestId("customer-name-1")).toHaveText("David Jones");
+    await expect(page.getByTestId("customer-email-1")).toHaveText("david.j@example.com");
+    await expect(page.getByTestId("customer-avatar-1")).toHaveText("DJ");
+    await expect(page.getByTestId("customer-status-1")).toHaveText("Active");
+
+    await expect(page.getByTestId("customer-name-3")).toHaveText("Frank Miller");
+    await expect(page.getByTestId("customer-status-3")).toHaveText("Pending");
+  });
+
+  test("should style Active and Pending status badges", async ({ page }) => {
+    const activeStatus = page.getByTestId("customer-status-1");
+    const pendingStatus = page.getByTestId("customer-status-3");
+
+    await expect(activeStatus).toHaveCSS("color", "rgb(22, 101, 52)");
+    await expect(activeStatus).toHaveCSS("background-color", "rgb(220, 252, 231)");
+    await expect(pendingStatus).toHaveCSS("color", "rgb(146, 64, 14)");
+    await expect(pendingStatus).toHaveCSS("background-color", "rgb(254, 243, 199)");
+  });
+});
+
+// ─── GROUP 7: Screenshots ─────────────────────────────────────────────────────
 test.describe("Dashboard - Screenshots", () => {
   test("take a full page screenshot of the dashboard", async ({ page }) => {
     await page.goto("/dashboard");

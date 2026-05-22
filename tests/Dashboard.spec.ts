@@ -51,6 +51,7 @@ test.describe("Dashboard - Page Load", () => {
       "nav-orders",
       "nav-customers",
       "nav-settings",
+      "nav-about",
     ];
 
     for (const testId of navLinks) {
@@ -289,5 +290,96 @@ test.describe("Dashboard - Screenshots", () => {
     await revenueCard.screenshot({
       path: "tests/screenshots/stat-card-revenue.png",
     });
+  });
+});
+
+// ─── GROUP 7: Recent Customers Widget ────────────────────────────────────────
+test.describe("Dashboard - Recent Customers", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto("/dashboard");
+  });
+
+  test("should show widget section and title", async ({ page }) => {
+    await expect(page.getByTestId("recent-customers-section")).toBeVisible();
+    await expect(page.getByTestId("recent-customers-title")).toHaveText("Recent Customers");
+  });
+
+  test("should display exactly 3 customer rows", async ({ page }) => {
+    const rows = page.locator('[data-testid^="rc-item-"]');
+    await expect(rows).toHaveCount(3);
+  });
+
+  test("should show correct details for row 1 (David Jones)", async ({ page }) => {
+    await expect(page.getByTestId("rc-name-1")).toHaveText("David Jones");
+    await expect(page.getByTestId("rc-email-1")).toHaveText("david.jones@example.com");
+    await expect(page.getByTestId("rc-avatar-1")).toHaveText("DJ");
+  });
+
+  test("should show correct details for row 2 (Emma Watson)", async ({ page }) => {
+    await expect(page.getByTestId("rc-name-2")).toHaveText("Emma Watson");
+    await expect(page.getByTestId("rc-email-2")).toHaveText("emma.watson@example.com");
+    await expect(page.getByTestId("rc-avatar-2")).toHaveText("EW");
+  });
+
+  test("should show correct details for row 3 (Frank Miller)", async ({ page }) => {
+    await expect(page.getByTestId("rc-name-3")).toHaveText("Frank Miller");
+    await expect(page.getByTestId("rc-email-3")).toHaveText("frank.miller@example.com");
+    await expect(page.getByTestId("rc-avatar-3")).toHaveText("FM");
+  });
+
+  test("should have correct status badge text on each row", async ({ page }) => {
+    await expect(page.getByTestId("rc-status-1")).toHaveText("Active");
+    await expect(page.getByTestId("rc-status-2")).toHaveText("Active");
+    await expect(page.getByTestId("rc-status-3")).toHaveText("Pending");
+  });
+
+  test("should have correct status badge colors (green for Active, amber for Pending)", async ({ page }) => {
+    // Active badge: green background
+    await expect(page.getByTestId("rc-status-1")).toHaveCSS("background-color", "rgb(209, 250, 229)");
+    // Pending badge: amber/ yellow background
+    await expect(page.getByTestId("rc-status-3")).toHaveCSS("background-color", "rgb(254, 243, 199)");
+  });
+});
+
+// ─── GROUP 8: Active Users Overview ─────────────────────────────────────────
+test.describe("Dashboard - Active Users Overview", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto("/dashboard");
+  });
+
+  test("should show widget section and title", async ({ page }) => {
+    await expect(page.getByTestId("active-users-section")).toBeVisible();
+    await expect(page.getByTestId("active-users-title")).toHaveText("Active Users Overview");
+  });
+
+  test("should display peak indicator with correct max value", async ({ page }) => {
+    const peakEl = page.getByTestId("active-users-peak");
+    await expect(peakEl).toBeVisible();
+    await expect(peakEl).toContainText("12:00 PM - 04:00 PM");
+    await expect(peakEl).toContainText("3,842");
+  });
+
+  test("should render exactly 6 time-block rows", async ({ page }) => {
+    const rows = page.locator('[data-testid^="active-users-row-"]');
+    await expect(rows).toHaveCount(6);
+  });
+
+  test("should display correct data for row 0 (12:00 AM - 04:00 AM)", async ({ page }) => {
+    await expect(page.getByTestId("active-users-block-0")).toHaveText("12:00 AM - 04:00 AM");
+    await expect(page.getByTestId("active-users-count-0")).toHaveText("1,240");
+    await expect(page.getByTestId("active-users-trend-0")).toHaveText("Stable");
+    await expect(page.getByTestId("active-users-trend-0")).toHaveCSS("color", "rgb(107, 114, 128)");
+  });
+
+  test("should display correct data for row 3 (12:00 PM - 04:00 PM) with Peak badge color", async ({ page }) => {
+    await expect(page.getByTestId("active-users-block-3")).toHaveText("12:00 PM - 04:00 PM");
+    await expect(page.getByTestId("active-users-count-3")).toHaveText("3,842");
+    await expect(page.getByTestId("active-users-trend-3")).toHaveText("Peak");
+    await expect(page.getByTestId("active-users-trend-3")).toHaveCSS("color", "rgb(79, 70, 229)");
+  });
+
+  test("should cross-verify peak count matches Active Users stat card", async ({ page }) => {
+    await expect(page.getByTestId("active-users-count-3")).toHaveText("3,842");
+    await expect(page.getByTestId("stat-value-users")).toHaveText("3,842");
   });
 });

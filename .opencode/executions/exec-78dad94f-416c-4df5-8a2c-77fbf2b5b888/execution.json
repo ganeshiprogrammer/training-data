@@ -1,0 +1,1496 @@
+{
+  "id": "exec-78dad94f-416c-4df5-8a2c-77fbf2b5b888",
+  "projectId": "project-fc2153ed-7930-4825-97b3-9cdc695fb754",
+  "projectPath": "/Users/sameert/Documents/projects/learning/training-data",
+  "storyKey": "TS-02",
+  "storyTitle": "Add Customer List Widget to Dashboard Page",
+  "storyDescription": "User Story\nAs an administrator using AdminPro,\n\nI want to view a summary list of customers directly on the Dashboard page,\n\nSo that I can quickly see recent customer overviews without having to navigate away to the dedicated Customers tab.\n\nDescription & Scope\nWe need to add a new \"Recent Customers\" list widget to the main Dashboard view. Since the backend API endpoints for this data are still under development, this UI component should be populated entirely with mock data matching our current design system.\n\nThe widget should be placed below the existing metrics cards (or alongside the \"Recent Activity\" list, depending on the layout grid) and match the existing UI styling (clean white cards, specific typography, and standard avatar icons).\n\nUI & Design Specifications\nWidget Title: Recent Customers\n\nMock Data Fields per Row:\n\nAvatar: Circular badge with initials (e.g., \"DJ\" for David Jones), utilizing the existing theme colors (#3b82f6 or similar brand colors).\n\nCustomer Name: Bold text (e.g., David Jones).\n\nEmail Address: Secondary text below the name (e.g., david.j@example.com).\n\nStatus Badge: A small colored badge indicating account status (Active - Green, Pending - Yellow).\n\nList Limit: Display a maximum of 3 records to keep the dashboard concise.\n\nMock Data Payload (Frontend Implementation)\nPlease use this static JSON array within the component state to render the UI:\n\nJSON\n[\n  {\n    \"id\": 1,\n    \"name\": \"David Jones\",\n    \"initials\": \"DJ\",\n    \"email\": \"david.j@example.com\",\n    \"status\": \"Active\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Emma Watson\",\n    \"initials\": \"EW\",\n    \"email\": \"emma.w@example.com\",\n    \"status\": \"Active\"\n  },\n  {\n    \"id\": 3,\n    \"name\": \"Frank Miller\",\n    \"initials\": \"FM\",\n    \"email\": \"f.miller@example.com\",\n    \"status\": \"Pending\"\n  }\n]\nAcceptance Criteria\n[ ] UI Alignment: The widget seamlessly integrates into the dashboard layout and follows the styling of the \"Recent Activity\" section (consistent margins, borders, shadows, and fonts).\n\n[ ] Data Rendering: The widget successfully loops through and displays all 3 mock records.\n\n[ ] Status Badges: The status colors render correctly based on the mock data (Active = Green text/background, Pending = Yellow/Orange text/background).\n\n[ ] Responsiveness: The list scales correctly across standard desktop and laptop resolutions.\n\n[ ] No Backend Dependency: The component does not make any actual HTTP/API requests and relies purely on local state/mock files.",
+  "baseBranch": "main",
+  "branchName": "feature/TS-02-add-customer-list-widget-to-dashboard-page",
+  "worktreePath": "/Users/sameert/Documents/projects/learning/training-data/.opencode-worktrees/TS-02-add-customer-list-widget-to-dashboard-page",
+  "provider": "cursor",
+  "mode": "fast_story",
+  "inputType": "jira_story",
+  "inputs": {
+    "storyDescription": "User Story\nAs an administrator using AdminPro,\n\nI want to view a summary list of customers directly on the Dashboard page,\n\nSo that I can quickly see recent customer overviews without having to navigate away to the dedicated Customers tab.\n\nDescription & Scope\nWe need to add a new \"Recent Customers\" list widget to the main Dashboard view. Since the backend API endpoints for this data are still under development, this UI component should be populated entirely with mock data matching our current design system.\n\nThe widget should be placed below the existing metrics cards (or alongside the \"Recent Activity\" list, depending on the layout grid) and match the existing UI styling (clean white cards, specific typography, and standard avatar icons).\n\nUI & Design Specifications\nWidget Title: Recent Customers\n\nMock Data Fields per Row:\n\nAvatar: Circular badge with initials (e.g., \"DJ\" for David Jones), utilizing the existing theme colors (#3b82f6 or similar brand colors).\n\nCustomer Name: Bold text (e.g., David Jones).\n\nEmail Address: Secondary text below the name (e.g., david.j@example.com).\n\nStatus Badge: A small colored badge indicating account status (Active - Green, Pending - Yellow).\n\nList Limit: Display a maximum of 3 records to keep the dashboard concise.\n\nMock Data Payload (Frontend Implementation)\nPlease use this static JSON array within the component state to render the UI:\n\nJSON\n[\n  {\n    \"id\": 1,\n    \"name\": \"David Jones\",\n    \"initials\": \"DJ\",\n    \"email\": \"david.j@example.com\",\n    \"status\": \"Active\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Emma Watson\",\n    \"initials\": \"EW\",\n    \"email\": \"emma.w@example.com\",\n    \"status\": \"Active\"\n  },\n  {\n    \"id\": 3,\n    \"name\": \"Frank Miller\",\n    \"initials\": \"FM\",\n    \"email\": \"f.miller@example.com\",\n    \"status\": \"Pending\"\n  }\n]\nAcceptance Criteria\n[ ] UI Alignment: The widget seamlessly integrates into the dashboard layout and follows the styling of the \"Recent Activity\" section (consistent margins, borders, shadows, and fonts).\n\n[ ] Data Rendering: The widget successfully loops through and displays all 3 mock records.\n\n[ ] Status Badges: The status colors render correctly based on the mock data (Active = Green text/background, Pending = Yellow/Orange text/background).\n\n[ ] Responsiveness: The list scales correctly across standard desktop and laptop resolutions.\n\n[ ] No Backend Dependency: The component does not make any actual HTTP/API requests and relies purely on local state/mock files.",
+    "storyKey": "TS-02",
+    "storyTitle": "Add Customer List Widget to Dashboard Page"
+  },
+  "context": {
+    "cursor": {
+      "auto": false,
+      "model": "composer-2.5",
+      "premium": false
+    },
+    "modeDependencies": {
+      "optionalMissingAgents": [],
+      "optionalMissingStageKeys": [],
+      "requiredMissingAgents": []
+    },
+    "models": {
+      "byStep": {
+        "ai_reviewer": "composer-2.5",
+        "code_implementer": "composer-2.5",
+        "commit_push": "composer-2.5",
+        "final_review": "composer-2.5",
+        "implementation_planner": "composer-2.5",
+        "prepare_branch": "composer-2.5",
+        "story_analyzer": "composer-2.5"
+      },
+      "defaultModel": "composer-2.5"
+    },
+    "testing": {
+      "runFullTestSuiteBeforeFinalReview": false
+    },
+    "reviewState": {}
+  },
+  "status": "completed",
+  "currentStep": "commit_push",
+  "steps": [
+    {
+      "key": "prepare_branch",
+      "status": "completed",
+      "startedAt": "2026-05-21T07:43:14Z",
+      "completedAt": "2026-05-21T07:43:17Z",
+      "error": null,
+      "statusReason": null
+    },
+    {
+      "key": "story_analyzer",
+      "status": "completed",
+      "startedAt": "2026-05-21T07:43:17Z",
+      "completedAt": "2026-05-21T07:44:47Z",
+      "error": null,
+      "statusReason": null,
+      "providerUsage": {
+        "inputTokens": 25080,
+        "outputTokens": 3617,
+        "reasoningTokens": 0,
+        "cacheReadTokens": 130048,
+        "cacheWriteTokens": 0,
+        "costUsd": 0.047592100000000005
+      },
+      "providerSessionIds": [
+        "cf977410-44bb-4b9c-a6a5-77bc6ade8971"
+      ],
+      "promptCharCount": 2544,
+      "estimatedPromptTokens": 636,
+      "promptTokenCount": 636,
+      "tokenCounterSource": "chars/4"
+    },
+    {
+      "key": "implementation_planner",
+      "status": "completed",
+      "startedAt": "2026-05-21T07:44:47Z",
+      "completedAt": "2026-05-21T07:46:18Z",
+      "error": null,
+      "statusReason": null,
+      "providerUsage": {
+        "inputTokens": 23896,
+        "outputTokens": 4042,
+        "reasoningTokens": 0,
+        "cacheReadTokens": 95488,
+        "cacheWriteTokens": 0,
+        "costUsd": 0.0411506
+      },
+      "providerSessionIds": [
+        "ed6a3488-f859-442b-915c-a16fa38e4439"
+      ],
+      "promptCharCount": 2728,
+      "estimatedPromptTokens": 682,
+      "promptTokenCount": 682,
+      "tokenCounterSource": "chars/4"
+    },
+    {
+      "key": "code_implementer",
+      "status": "completed",
+      "startedAt": "2026-05-21T07:46:18Z",
+      "completedAt": "2026-05-21T07:47:38Z",
+      "error": null,
+      "statusReason": null,
+      "providerUsage": {
+        "inputTokens": 26867,
+        "outputTokens": 3654,
+        "reasoningTokens": 0,
+        "cacheReadTokens": 181504,
+        "cacheWriteTokens": 0,
+        "costUsd": 0.058869300000000006
+      },
+      "providerSessionIds": [
+        "b687fb97-d8a0-40c5-8d76-4a1f3ee424a4"
+      ],
+      "promptCharCount": 1974,
+      "estimatedPromptTokens": 494,
+      "promptTokenCount": 494,
+      "tokenCounterSource": "chars/4"
+    },
+    {
+      "key": "ai_reviewer",
+      "status": "completed",
+      "startedAt": "2026-05-21T07:47:38Z",
+      "completedAt": "2026-05-21T07:47:38Z",
+      "error": null,
+      "statusReason": null
+    },
+    {
+      "key": "final_review",
+      "status": "completed",
+      "startedAt": "2026-05-21T07:47:38Z",
+      "completedAt": "2026-05-21T07:49:39Z",
+      "error": null,
+      "statusReason": null,
+      "providerUsage": {
+        "inputTokens": 40292,
+        "outputTokens": 4734,
+        "reasoningTokens": 0,
+        "cacheReadTokens": 176128,
+        "cacheWriteTokens": 0,
+        "costUsd": 0.0672066
+      },
+      "providerSessionIds": [
+        "10852ae5-bb25-4984-97fe-b069c6baf509"
+      ],
+      "promptCharCount": 53889,
+      "estimatedPromptTokens": 13473,
+      "promptTokenCount": 13473,
+      "tokenCounterSource": "chars/4",
+      "reviewContextTokenCount": 12665,
+      "reviewContextBudgetApplied": false
+    },
+    {
+      "key": "commit_push",
+      "status": "completed",
+      "startedAt": "2026-05-21T07:49:50Z",
+      "completedAt": "2026-05-21T07:49:50Z",
+      "error": null,
+      "statusReason": null
+    }
+  ],
+  "review": {
+    "enabled": false,
+    "autoFixEnabled": false,
+    "currentCycle": 0,
+    "maxCycles": 1
+  },
+  "files": {
+    "specFile": "docs/ai/stories/TS-02/spec.md",
+    "planFile": "docs/ai/stories/TS-02/implementation-plan.md",
+    "reviewFile": null,
+    "finalSummaryFile": ".opencode/executions/exec-78dad94f-416c-4df5-8a2c-77fbf2b5b888/final-summary.md"
+  },
+  "logs": [
+    {
+      "id": "d0140726-8b09-49d3-b601-56f92279b5e4",
+      "timestamp": "2026-05-21T07:43:14Z",
+      "level": "info",
+      "message": "Step started: prepare_branch",
+      "stepKey": "prepare_branch"
+    },
+    {
+      "id": "d895a680-358c-4d0a-80c7-99153158d7ba",
+      "timestamp": "2026-05-21T07:43:14Z",
+      "level": "info",
+      "message": "Preparing isolated git worktree and feature branch\u2026",
+      "stepKey": "prepare_branch"
+    },
+    {
+      "id": "c441b409-b438-4f9b-8e3e-2c300f32b785",
+      "timestamp": "2026-05-21T07:43:17Z",
+      "level": "info",
+      "message": "Worktree ready at /Users/sameert/Documents/projects/learning/training-data/.opencode-worktrees/TS-02-add-customer-list-widget-to-dashboard-page on branch 'feature/TS-02-add-customer-list-widget-to-dashboard-page'.",
+      "stepKey": "prepare_branch"
+    },
+    {
+      "id": "ddad06dd-629b-4a92-8b86-e81f9d25d8a3",
+      "timestamp": "2026-05-21T07:43:17Z",
+      "level": "info",
+      "message": "Step completed: prepare_branch",
+      "stepKey": "prepare_branch"
+    },
+    {
+      "id": "bcc063a0-97ef-4e41-bacb-6d5a7ade3e5e",
+      "timestamp": "2026-05-21T07:43:17Z",
+      "level": "info",
+      "message": "Step started: story_analyzer",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "20ed49eb-0567-43da-93c9-bc5a691e7225",
+      "timestamp": "2026-05-21T07:43:17Z",
+      "level": "info",
+      "message": "Invoking story-analyzer \u2192 docs/ai/stories/TS-02/spec.md",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "648ef33c-75ce-4dd0-bd85-5596a9cd59f4",
+      "timestamp": "2026-05-21T07:43:17Z",
+      "level": "info",
+      "message": "Wrote Cursor context pack at .opencode/executions/exec-78dad94f-416c-4df5-8a2c-77fbf2b5b888/context-packs/story_analyzer.md",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "fb682d7e-7696-415e-885d-9b870d042174",
+      "timestamp": "2026-05-21T07:43:17Z",
+      "level": "info",
+      "message": "Capturing raw Cursor stream at .opencode/executions/exec-78dad94f-416c-4df5-8a2c-77fbf2b5b888/cursor-streams/story_analyzer-20260521T074317Z-5650a050.jsonl",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "16a515a3-56c4-4393-b2b0-57bb3c1a59ac",
+      "timestamp": "2026-05-21T07:43:24Z",
+      "level": "info",
+      "message": "[cursor] initialized model: Composer 2.5",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "1f912e58-e48b-40e9-9323-185a3a46c87f",
+      "timestamp": "2026-05-21T07:43:34Z",
+      "level": "info",
+      "message": "Reading the story-analyzer context pack first.",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "19f88e85-a056-4a40-8c0d-7e1142eb6245",
+      "timestamp": "2026-05-21T07:43:34Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "1b0cf69d-59de-437a-bcf6-580a3db7da07",
+      "timestamp": "2026-05-21T07:43:35Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "16bc2b70-6c45-4636-9bd4-579e611d9339",
+      "timestamp": "2026-05-21T07:43:39Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "3ba28083-d62f-4303-913b-fe5f32fddeeb",
+      "timestamp": "2026-05-21T07:43:39Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "81ed26fa-df16-4a90-8411-d064a926ca25",
+      "timestamp": "2026-05-21T07:43:48Z",
+      "level": "info",
+      "message": "Description is truncated; checking execution artifacts for the full story details.",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "8de6938f-b546-40da-b933-688509122c63",
+      "timestamp": "2026-05-21T07:43:48Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "ccc15ccd-66c5-45e9-b7d7-657a7e3e1414",
+      "timestamp": "2026-05-21T07:43:48Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "241d8078-7e72-449c-920c-aaaaab379fd7",
+      "timestamp": "2026-05-21T07:43:53Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "9dcac35a-9814-4a1f-a852-88ed9d559ffa",
+      "timestamp": "2026-05-21T07:43:53Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "dca1ae11-8157-41f1-b6ed-703dbaf111b2",
+      "timestamp": "2026-05-21T07:43:54Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "032d6f13-4cbe-4db9-acb0-9a6aa9fe561b",
+      "timestamp": "2026-05-21T07:43:55Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "1560508c-c7d4-4933-a7be-a0412e9b5165",
+      "timestamp": "2026-05-21T07:43:58Z",
+      "level": "info",
+      "message": "Searching for the full TS-02 story definition referenced by the context pack.",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "ef0a46c7-e0a7-4d7a-b1d2-4735542449b0",
+      "timestamp": "2026-05-21T07:43:58Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "7a2b48fb-368f-4a78-9099-4348fedd444b",
+      "timestamp": "2026-05-21T07:43:58Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "2f9cc6fd-9c80-4551-b31b-6111f914f912",
+      "timestamp": "2026-05-21T07:43:59Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "168fc844-34ee-4b1b-b465-eff19be8c0ac",
+      "timestamp": "2026-05-21T07:43:59Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "f6da7047-2c82-412c-abec-687f22d620d9",
+      "timestamp": "2026-05-21T07:44:03Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "2ca34008-95f5-4f49-918f-9d1af8ea2c34",
+      "timestamp": "2026-05-21T07:44:03Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "3ce901b3-e4f3-4eec-996d-3a1b77eed3c0",
+      "timestamp": "2026-05-21T07:44:03Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "dcf16df4-8567-4be6-a92d-2966c828cacf",
+      "timestamp": "2026-05-21T07:44:03Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "a2040e0a-a98f-4bf0-84b9-eda6cebe3b11",
+      "timestamp": "2026-05-21T07:44:07Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "6cde934b-b5e3-449b-be66-60bc4cdaf5cd",
+      "timestamp": "2026-05-21T07:44:08Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "908dfdce-54a7-4c99-b931-2ddb52a582e8",
+      "timestamp": "2026-05-21T07:44:08Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "175f30fd-65c6-4718-8659-b09fbc0f38f6",
+      "timestamp": "2026-05-21T07:44:09Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "956d00e0-4cb2-4a6c-828e-03c364d234f1",
+      "timestamp": "2026-05-21T07:44:47Z",
+      "level": "info",
+      "message": "# TS-02: Add Customer List Widget to Dashboard Page\n\n## Overview\n\nAdd a **Recent Customers** list widget to the AdminPro Dashboard so administrators can see a concise customer summary without opening the Customers tab. Data is **mock-only** until backend APIs exist.\n\n## User Story\n\n**As** an administrator using AdminPro,  \n**I want** a summary list of customers on the Dashboard page,  \n**So that** I can quickly see recent customer overviews without navigating to the dedicated Customers tab.\n\n## Scope\n\n### In scope\n\n- New **Recent Customers** widget on the main Dashboard view\n- Static mock data (3 records) rendered in the UI\n- Row layout: avatar initials, name, email, status badge\n- Visual alignment with existing Dashboard patterns (white cards, typography, avatars)\n- Placement below existing metrics cards **or** alongside the **Recent Activity** list, per the current layout grid\n- Responsive behavior on standard desktop and laptop widths\n\n### Out of scope\n\n- Backend/API integration for customer data\n- HTTP requests or live data fetching\n- Customers tab changes\n- More than 3 list rows on the Dashboard widget\n\n## Requirements\n\n1. **Widget presence** \u2014 Dashboard shows a widget titled **Recent Customers**.\n2. **Mock data only** \u2014 Widget uses local static data (component state or equivalent); no API calls.\n3. **Record limit** \u2014 Exactly **3** customer rows are shown.\n4. **Row content** \u2014 Each row includes:\n   - **Avatar** \u2014 Circular badge with initials (e.g. `DJ` for David Jones), using existing theme colors (e.g. `#3b82f6` or similar brand blues)\n   - **Customer name** \u2014 Bold primary text\n   - **Email** \u2014 Secondary text below the name\n   - **Status badge** \u2014 Small badge for account status\n5. **Status styling** \u2014 `Active` \u2192 green badge/text/background; `Pending` \u2192 yellow/orange badge/text/background\n6. **Layout integration** \u2014 Widget fits the Dashboard grid below metric cards and/or beside **Recent Activity**, with consistent margins, borders, shadows, and fonts\n7. **Testability** \u2014 Interactive and structural elements use `data-testid` attributes (project convention)\n8. **Styling approach** \u2014 Follow established **inline style props** pattern used elsewhere in the app\n\n## UI Notes\n\n| Element | Specification |\n|--------|----------------|\n| Widget title | `Recent Customers` |\n| Card style | Clean white card consistent with Dashboard widgets |\n| Avatar | Circular initials badge; brand/theme blue tones |\n| Name | Bold (e.g. David Jones) |\n| Email | Muted/secondary below name |\n| Status | Compact colored badge per row |\n| Reference section | Match **Recent Activity** widget styling (spacing, borders, shadows, typography) |\n| Max rows | 3 |\n\n## Mock Data\n\nUse this static array in component state (or equivalent local mock):\n\n```json\n[\n  {\n    \"id\": 1,\n    \"name\": \"David Jones\",\n    \"initials\": \"DJ\",\n    \"email\": \"david.j@example.com\",\n    \"status\": \"Active\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Emma Watson\",\n    \"initials\": \"EW\",\n    \"email\": \"emma.w@example.com\",\n    \"status\": \"Active\"\n  },\n  {\n    \"id\": 3,\n    \"name\": \"Frank Miller\",\n    \"initials\": \"FM\",\n    \"email\": \"f.miller@example.com\",\n    \"status\": \"Pending\"\n  }\n]\n```\n\n## Acceptance Criteria\n\n- [ ] **UI alignment** \u2014 Widget integrates into the Dashboard layout and matches **Recent Activity** styling (margins, borders, shadows, fonts).\n- [ ] **Data rendering** \u2014 All **3** mock records render in the list.\n- [ ] **Status badges** \u2014 `Active` uses green styling; `Pending` uses yellow/orange styling, per mock data.\n- [ ] **Responsiveness** \u2014 List layout remains usable on standard desktop and laptop resolutions.\n- [ ] **No backend dependency** \u2014 No HTTP/API requests; data comes only from local state/mock data.\n\n## Implementation Notes\n\n### Stack and paths (from context map)\n\n| Area | Location / detail |\n|------|-------------------|\n| Framework | React 19 SPA (JavaScript + JSX) |\n| Build | Vite 8 |\n| Router | `react-router-dom` 7 \u2014 `src/App.jsx` |\n| Entry | `src/main.jsx` |\n| Pages | `src/pag",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "500585fb-79fa-4969-915b-f6dbc0139c13",
+      "timestamp": "2026-05-21T07:44:47Z",
+      "level": "info",
+      "message": "[cursor] run completed",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "094ae1dc-d87f-40de-936f-d3d9516fd503",
+      "timestamp": "2026-05-21T07:44:47Z",
+      "level": "info",
+      "message": "Wrote spec at docs/ai/stories/TS-02/spec.md",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "0998adf4-0073-4f4c-8949-96860559f39d",
+      "timestamp": "2026-05-21T07:44:47Z",
+      "level": "info",
+      "message": "Wrote handoff at .opencode/executions/exec-78dad94f-416c-4df5-8a2c-77fbf2b5b888/handoffs/story_analyzer.json",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "23b3b819-4fe9-4723-be18-9d77b0014529",
+      "timestamp": "2026-05-21T07:44:47Z",
+      "level": "info",
+      "message": "Step completed: story_analyzer",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "8a8a8e76-84c3-4a5c-a508-9c3f7686219d",
+      "timestamp": "2026-05-21T07:44:47Z",
+      "level": "info",
+      "message": "Step started: implementation_planner",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "0f1bc61c-c009-4ff9-9a73-546319f68ddc",
+      "timestamp": "2026-05-21T07:44:47Z",
+      "level": "info",
+      "message": "Invoking implementation-planner \u2192 docs/ai/stories/TS-02/implementation-plan.md",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "066dc162-f124-431b-802c-928ca7ee49e7",
+      "timestamp": "2026-05-21T07:44:47Z",
+      "level": "info",
+      "message": "Wrote Cursor context pack at .opencode/executions/exec-78dad94f-416c-4df5-8a2c-77fbf2b5b888/context-packs/implementation_planner.md",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "5bc2c9d7-aaf5-4af2-9a1e-bc1c4da3a79e",
+      "timestamp": "2026-05-21T07:44:47Z",
+      "level": "info",
+      "message": "Capturing raw Cursor stream at .opencode/executions/exec-78dad94f-416c-4df5-8a2c-77fbf2b5b888/cursor-streams/implementation_planner-20260521T074447Z-6164993b.jsonl",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "f57a0da0-d190-43e4-81c4-3659f8ecb011",
+      "timestamp": "2026-05-21T07:44:54Z",
+      "level": "info",
+      "message": "[cursor] initialized model: Composer 2.5",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "d532d2f2-e1da-4360-bf70-4de8dfccab95",
+      "timestamp": "2026-05-21T07:45:00Z",
+      "level": "info",
+      "message": "Reading the context pack and context map, then pulling in handoff/spec only if needed for accurate target files.",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "643ae9b7-c6f7-4692-9213-afce7e9c7753",
+      "timestamp": "2026-05-21T07:45:00Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "2727dcb2-5efd-4ca3-ab24-85842dc2f086",
+      "timestamp": "2026-05-21T07:45:00Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "49e521c8-4bad-454c-b7eb-34c77e82b66d",
+      "timestamp": "2026-05-21T07:45:01Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "2aa0021c-9f00-4738-a870-b4452a3461bb",
+      "timestamp": "2026-05-21T07:45:01Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "3bedb927-220b-4f48-9dca-721289f5a73a",
+      "timestamp": "2026-05-21T07:45:02Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "5882c29b-cb47-4f35-a63c-f650c1fd8ba5",
+      "timestamp": "2026-05-21T07:45:02Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "ba16bf13-dafc-40ee-b0a0-5ce67e6b656b",
+      "timestamp": "2026-05-21T07:45:06Z",
+      "level": "info",
+      "message": "Reading full content from the context pack and handoff files.",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "33af421b-4a43-4ce9-9687-08812a7a8e06",
+      "timestamp": "2026-05-21T07:45:06Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "e4c1b045-0ff8-42ba-b6b1-615bbc32338c",
+      "timestamp": "2026-05-21T07:45:06Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "2e5005de-7ef4-476d-a43b-f0e6d716b3e7",
+      "timestamp": "2026-05-21T07:45:07Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "6075754e-955b-416b-aeb5-cb27c862a154",
+      "timestamp": "2026-05-21T07:45:07Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "631db963-c11a-460b-b022-22d746f47fd6",
+      "timestamp": "2026-05-21T07:45:07Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "a06edc47-3b06-4519-896e-a1ea9e9298a1",
+      "timestamp": "2026-05-21T07:45:08Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "c487e7e2-f606-4642-8694-3b75ecf2b70c",
+      "timestamp": "2026-05-21T07:45:14Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "70223726-52d4-4f4e-ace2-4ae8feb405ef",
+      "timestamp": "2026-05-21T07:45:15Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "9fe77afd-7cde-4965-ae4c-dd9d66451776",
+      "timestamp": "2026-05-21T07:45:15Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "943480b4-76d2-4499-af55-7e34e992510f",
+      "timestamp": "2026-05-21T07:45:16Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "03afd76f-95f9-4966-8f6e-e7f323f77ff7",
+      "timestamp": "2026-05-21T07:45:16Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "88b563c5-5778-4084-95b7-0c1ac4ab839b",
+      "timestamp": "2026-05-21T07:45:16Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "03d033f4-8b14-49dc-b39c-d37b1823d0bc",
+      "timestamp": "2026-05-21T07:45:23Z",
+      "level": "info",
+      "message": "Inspecting Dashboard layout and RecentActivity styling patterns.",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "5d5f00b9-0f8e-4c72-8a48-65d76f30be4a",
+      "timestamp": "2026-05-21T07:45:23Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "44e79991-19c9-4885-b1dc-dcf87ddf2003",
+      "timestamp": "2026-05-21T07:45:24Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "5c8d24ba-567f-48f0-9f40-6aea662f0595",
+      "timestamp": "2026-05-21T07:45:24Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "129a36df-ee13-4476-b41f-8f23743b2d61",
+      "timestamp": "2026-05-21T07:45:24Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "e91cbd7a-2bc6-4d57-9971-849061ab9f00",
+      "timestamp": "2026-05-21T07:45:25Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "9fc64f92-9f7c-4a2e-b1d2-8a6e4961f6ce",
+      "timestamp": "2026-05-21T07:45:25Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "40c3c561-286e-4f08-af5f-5c8989d3cbf3",
+      "timestamp": "2026-05-21T07:45:25Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "ac25c3db-f711-4d73-8d5c-3a799e6a0b03",
+      "timestamp": "2026-05-21T07:45:25Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "42a72dfd-f1ec-446d-9975-e4d6d076c86b",
+      "timestamp": "2026-05-21T07:45:36Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "3827bb1b-967b-46e5-9be0-c7f7fd0ea3d9",
+      "timestamp": "2026-05-21T07:45:36Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "c34b5228-2df9-44b3-9670-3ab27f3b9d57",
+      "timestamp": "2026-05-21T07:45:37Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "04c407b5-944c-475c-a764-90c0a930851b",
+      "timestamp": "2026-05-21T07:45:37Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "eec4785e-f10a-479d-81d9-4697876369ee",
+      "timestamp": "2026-05-21T07:46:17Z",
+      "level": "info",
+      "message": "# TS-02 Implementation Plan: Recent Customers Widget\n\n## Goal\n\nAdd a **Recent Customers** widget to the AdminPro Dashboard with three mock customer rows (avatar initials, name, email, status badge). Data is local/static only\u2014no API calls. Visual and structural patterns should mirror **Recent Activity**.\n\n## Current State (from inspection)\n\n- `src/pages/Dashboard.jsx`: metrics grid (`data-testid=\"stats-grid\"`), then a full-width **Recent Activity** section (`data-testid=\"activity-section\"`) rendering `<RecentActivity activities={filteredActivities} />`.\n- `src/components/RecentActivity.jsx`: white card rows, circular avatar (`#4f46e5`), bold primary + muted secondary text, `data-testid` per row (`activity-item-{id}`, etc.).\n- No customer widget or two-column widget row exists yet.\n\n## Placement Decision\n\nUse a **two-column widget row** below the stats grid:\n\n- Left: existing Recent Activity (unchanged behavior, including search filter).\n- Right: new Recent Customers widget.\n\nUse CSS grid with `gridTemplateColumns: \"repeat(auto-fit, minmax(320px, 1fr))\"` and `gap: \"24px\"` so desktop/laptop shows side-by-side and narrower viewports stack. This satisfies the spec\u2019s \u201calongside Recent Activity\u201d option without removing activity from the page.\n\n## Implementation Steps\n\n### 1. Create `RecentCustomers` component\n\n**File:** `src/components/RecentCustomers.jsx`\n\n- Export default `RecentCustomers({ customers })` (prop-driven for testability; mock array can live in Dashboard).\n- Define mock data constant in Dashboard (see step 2) matching spec:\n\n| Field | Values |\n|-------|--------|\n| 1 | David Jones, DJ, david.j@example.com, Active |\n| 2 | Emma Watson, EW, emma.w@example.com, Active |\n| 3 | Frank Miller, FM, f.miller@example.com, Pending |\n\n- Mirror **Recent Activity** row styling:\n  - Outer list: `listStyle: \"none\"`, column `gap: \"12px\"`.\n  - Row card: `background: \"#fff\"`, `borderRadius: \"10px\"`, `padding: \"14px 20px\"`, `border: \"1px solid #f1f3f9\"`, `boxShadow: \"0 1px 3px rgba(0,0,0,0.04)\"`, flex row with `gap: \"16px\"`.\n  - Avatar: 40\u00d740 circle, initials, brand blue (`#3b82f6` or match activity `#4f46e5`).\n  - Name: `fontWeight: 600`, `fontSize: \"14px\"`, `color: \"#1a1d2e\"`.\n  - Email: `fontSize: \"13px\"`, `color: \"#6b7280\"`.\n  - Status badge: compact pill on the right (replace activity \u201ctime\u201d slot).\n\n- Status styling helper (inline, no new CSS files):\n  - **Active:** green text/background (e.g. `#166534` on `#dcfce7` or similar).\n  - **Pending:** yellow/orange (e.g. `#92400e` on `#fef3c7`).\n\n- Required `data-testid` (kebab-case):\n  - `recent-customers-widget` (root/section wrapper inside component or on section in Dashboard)\n  - `customer-list`\n  - `customer-item-{id}`\n  - `customer-avatar-{id}`\n  - `customer-name-{id}`\n  - `customer-email-{id}`\n  - `customer-status-{id}`\n\n- No `fetch`, `axios`, or effects for data loading.\n\n### 2. Wire into Dashboard page\n\n**File:** `src/pages/Dashboard.jsx`\n\n- `import RecentCustomers from \"../components/RecentCustomers\"`.\n- Add `const customers = [ ... ]` (3 records from spec) near existing `activities` constant.\n- Below `stats-grid`, replace the single full-width activity block with a widgets container, e.g. `data-testid=\"dashboard-widgets\"`:\n  - Grid/flex layout for two children.\n  - **Activity column:** keep `data-testid=\"activity-section\"`, title \u201cRecent Activity\u201d, search count, `<RecentActivity activities={filteredActivities} />`.\n  - **Customers column:** new `data-testid=\"customers-section\"`, `h2` title **Recent Customers**, `<RecentCustomers customers={customers} />`.\n- Do **not** filter customers by `searchQuery` (out of scope).\n- Do **not** modify `Sidebar`, `StateCard`, or dead `src/components/dashboard.jsx`.\n\n### 3. Responsiveness\n\n- Widget row uses `auto-fit` / `minmax` so columns stack on smaller widths.\n- Avoid fixed pixel widths on the widget row; let children use `minWidth: 0` if flex overflow appears.\n\n### 4. Tests (recommended, not blocking unless your stage requires them)\n\nIf adding",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "f8d3d73f-4cb2-4be8-bbb6-4b210b8272ab",
+      "timestamp": "2026-05-21T07:46:17Z",
+      "level": "info",
+      "message": "[cursor] run completed",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "ff8c4a8f-d373-45dd-838a-b4952df371be",
+      "timestamp": "2026-05-21T07:46:18Z",
+      "level": "info",
+      "message": "Wrote implementation plan at docs/ai/stories/TS-02/implementation-plan.md",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "bed12e78-11dc-4bb8-a739-d0103d2424b7",
+      "timestamp": "2026-05-21T07:46:18Z",
+      "level": "info",
+      "message": "Wrote handoff at .opencode/executions/exec-78dad94f-416c-4df5-8a2c-77fbf2b5b888/handoffs/implementation_planner.json",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "beb85a4e-3c57-4c67-b271-bf11cb9bbe30",
+      "timestamp": "2026-05-21T07:46:18Z",
+      "level": "info",
+      "message": "Step completed: implementation_planner",
+      "stepKey": "implementation_planner"
+    },
+    {
+      "id": "4084fa48-e770-477a-a1de-592e0f37c25d",
+      "timestamp": "2026-05-21T07:46:18Z",
+      "level": "info",
+      "message": "Step started: code_implementer",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "f126502d-b687-484f-aaf1-3dbcbf97a7fc",
+      "timestamp": "2026-05-21T07:46:18Z",
+      "level": "info",
+      "message": "Invoking code-implementer\u2026",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "09bad6cc-8b18-44f4-b07b-82140b4bac95",
+      "timestamp": "2026-05-21T07:46:18Z",
+      "level": "info",
+      "message": "Wrote Cursor context pack at .opencode/executions/exec-78dad94f-416c-4df5-8a2c-77fbf2b5b888/context-packs/code_implementer.md",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "acf39d64-8da2-4d0a-82c0-d5dee176147d",
+      "timestamp": "2026-05-21T07:46:18Z",
+      "level": "info",
+      "message": "Capturing raw Cursor stream at .opencode/executions/exec-78dad94f-416c-4df5-8a2c-77fbf2b5b888/cursor-streams/code_implementer-20260521T074618Z-207c4860.jsonl",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "306169be-a501-4604-837f-7d8cfa16e25a",
+      "timestamp": "2026-05-21T07:46:24Z",
+      "level": "info",
+      "message": "[cursor] initialized model: Composer 2.5",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "6f0c7ae5-dbcc-4602-a550-0c542186dfb8",
+      "timestamp": "2026-05-21T07:46:30Z",
+      "level": "info",
+      "message": "Reading the context pack and planner handoff first, then implementing per the plan.",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "dd7d16fa-afa7-42eb-aac6-c4429268c937",
+      "timestamp": "2026-05-21T07:46:30Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "566922df-4bd8-402f-a554-fa3a426ec616",
+      "timestamp": "2026-05-21T07:46:31Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "0c50a6a8-1a9a-4e32-9523-64d164fb94d9",
+      "timestamp": "2026-05-21T07:46:31Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "082cbcf2-728c-43f8-a02f-ef6d195a0960",
+      "timestamp": "2026-05-21T07:46:31Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "62454177-3de5-4852-b183-2c6d0c3f65f5",
+      "timestamp": "2026-05-21T07:46:32Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "6e5f4de9-e745-4851-94fa-fc0ac2eb9f52",
+      "timestamp": "2026-05-21T07:46:32Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "9f2587f3-3726-4370-8b04-f964360adf68",
+      "timestamp": "2026-05-21T07:46:35Z",
+      "level": "info",
+      "message": "Loading full context pack and planner handoff.",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "e5297036-9566-4880-a399-9df7926af115",
+      "timestamp": "2026-05-21T07:46:35Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "d0a6702c-80b3-4d8d-862b-20e9548472e7",
+      "timestamp": "2026-05-21T07:46:35Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "398e613a-5011-4907-83a8-b4449db51f12",
+      "timestamp": "2026-05-21T07:46:36Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "c857810e-3ee0-4ab3-94f3-bb52b50e14eb",
+      "timestamp": "2026-05-21T07:46:36Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "23330bc7-c0ec-4f1c-b455-1e456a38346f",
+      "timestamp": "2026-05-21T07:46:40Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "2f7f6e77-1d21-4556-9537-f4b62fe329fc",
+      "timestamp": "2026-05-21T07:46:40Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "f2d2d5fc-5e3e-4e09-9790-d40fa12ce549",
+      "timestamp": "2026-05-21T07:46:41Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "0858ed38-2432-4c68-9823-47875c572242",
+      "timestamp": "2026-05-21T07:46:41Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "dfe1ac50-916d-4839-9c91-c26926f85a06",
+      "timestamp": "2026-05-21T07:46:41Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "2e3b545f-8045-4f75-b5aa-85c7fc736ce4",
+      "timestamp": "2026-05-21T07:46:42Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "61cf0488-e3c3-45d1-a8c3-a72651c3b2c4",
+      "timestamp": "2026-05-21T07:46:42Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "402d4bb4-886e-4fc9-a596-921978d01514",
+      "timestamp": "2026-05-21T07:46:43Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "66b32e67-a070-476b-bcd9-26a719859a60",
+      "timestamp": "2026-05-21T07:46:46Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "22223803-a6b4-42e2-b59f-1cdd113ff27d",
+      "timestamp": "2026-05-21T07:46:46Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "ca0bce80-f361-49d5-81d2-60d262caaeb2",
+      "timestamp": "2026-05-21T07:46:59Z",
+      "level": "info",
+      "message": "Creating `RecentCustomers` and wiring it into the dashboard layout.",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "dbe6e01f-35d3-43ac-99ea-69e86f78dd48",
+      "timestamp": "2026-05-21T07:46:59Z",
+      "level": "info",
+      "message": "[tool] edit started /Users/sameert/Documents/projects/learning/training-data/.opencode-worktrees/TS-02-add-customer-list-widget-to-dashboard-page/src/components/RecentCustomers.jsx",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "19b9565c-cc55-454d-9db1-90fb4d7fe10a",
+      "timestamp": "2026-05-21T07:46:59Z",
+      "level": "info",
+      "message": "[tool] edit completed /Users/sameert/Documents/projects/learning/training-data/.opencode-worktrees/TS-02-add-customer-list-widget-to-dashboard-page/src/components/RecentCustomers.jsx",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "6f069263-c3a9-4c1a-ab94-e2b1ec00d224",
+      "timestamp": "2026-05-21T07:47:00Z",
+      "level": "info",
+      "message": "[tool] edit started /Users/sameert/Documents/projects/learning/training-data/.opencode-worktrees/TS-02-add-customer-list-widget-to-dashboard-page/src/pages/Dashboard.jsx",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "47be03dd-7108-4ad2-86bc-ce7a32324d69",
+      "timestamp": "2026-05-21T07:47:00Z",
+      "level": "info",
+      "message": "[tool] edit completed /Users/sameert/Documents/projects/learning/training-data/.opencode-worktrees/TS-02-add-customer-list-widget-to-dashboard-page/src/pages/Dashboard.jsx",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "1751c753-cc3d-437e-8ba0-0a62d6a3f2f9",
+      "timestamp": "2026-05-21T07:47:03Z",
+      "level": "info",
+      "message": "[tool] edit started /Users/sameert/Documents/projects/learning/training-data/.opencode-worktrees/TS-02-add-customer-list-widget-to-dashboard-page/src/pages/Dashboard.jsx",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "433ee9ae-d1c2-4358-af7a-4f3fd2dfa773",
+      "timestamp": "2026-05-21T07:47:03Z",
+      "level": "info",
+      "message": "[tool] edit completed /Users/sameert/Documents/projects/learning/training-data/.opencode-worktrees/TS-02-add-customer-list-widget-to-dashboard-page/src/pages/Dashboard.jsx",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "23e4f349-cee2-49d8-b9f3-ef0bff913b5c",
+      "timestamp": "2026-05-21T07:47:09Z",
+      "level": "info",
+      "message": "[tool] edit started /Users/sameert/Documents/projects/learning/training-data/.opencode-worktrees/TS-02-add-customer-list-widget-to-dashboard-page/src/pages/Dashboard.jsx",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "372bd74d-de56-428d-bb61-a72f481d2aab",
+      "timestamp": "2026-05-21T07:47:09Z",
+      "level": "info",
+      "message": "[tool] edit completed /Users/sameert/Documents/projects/learning/training-data/.opencode-worktrees/TS-02-add-customer-list-widget-to-dashboard-page/src/pages/Dashboard.jsx",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "e53de513-14df-4b4c-b5d2-01c48efd0665",
+      "timestamp": "2026-05-21T07:47:16Z",
+      "level": "info",
+      "message": "[tool] edit started /Users/sameert/Documents/projects/learning/training-data/.opencode-worktrees/TS-02-add-customer-list-widget-to-dashboard-page/tests/Dashboard.spec.ts",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "dc0b5762-e747-4515-b54c-35c49d3bc490",
+      "timestamp": "2026-05-21T07:47:16Z",
+      "level": "info",
+      "message": "[tool] edit completed /Users/sameert/Documents/projects/learning/training-data/.opencode-worktrees/TS-02-add-customer-list-widget-to-dashboard-page/tests/Dashboard.spec.ts",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "9ad8565a-9b8f-4550-8913-5903be329148",
+      "timestamp": "2026-05-21T07:47:18Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "e68e436d-040e-473f-a530-e9ecc545d0fb",
+      "timestamp": "2026-05-21T07:47:19Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "442814a9-3a64-43f8-8cf4-b727ef323b4f",
+      "timestamp": "2026-05-21T07:47:21Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "ce00b18f-e64f-4cca-9578-7247c8501e33",
+      "timestamp": "2026-05-21T07:47:23Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "05235eeb-fd9f-4972-a916-a24e1896cbc2",
+      "timestamp": "2026-05-21T07:47:24Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "98fd7926-e7a0-4695-8549-8a2a54f7eaf9",
+      "timestamp": "2026-05-21T07:47:34Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "deeb4955-2408-4a02-97d9-36d8ab5720f6",
+      "timestamp": "2026-05-21T07:47:38Z",
+      "level": "info",
+      "message": "**TS-02 done.** Added `RecentCustomers.jsx` (mock rows, status badges, test IDs), wired a two-column `dashboard-widgets` grid in `Dashboard.jsx` beside Recent Activity, and extended `Dashboard.spec.ts` with customer widget tests. Lint and build pass; Playwright failed here only because Chromium binaries are not installed (`npx playwright install` if you want to run tests locally).",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "1c416bee-ee51-4b5a-88c3-28e4a101f203",
+      "timestamp": "2026-05-21T07:47:38Z",
+      "level": "info",
+      "message": "[cursor] run completed",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "b3d8c70c-184d-4f9e-8711-941a483bf6aa",
+      "timestamp": "2026-05-21T07:47:38Z",
+      "level": "info",
+      "message": "Code implementer finished (working tree may contain uncommitted changes).",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "c1d4fed4-e6f4-46b2-a9f3-0cca462a8cf6",
+      "timestamp": "2026-05-21T07:47:38Z",
+      "level": "info",
+      "message": "Wrote handoff at .opencode/executions/exec-78dad94f-416c-4df5-8a2c-77fbf2b5b888/handoffs/code_implementer.json",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "d75bc443-ad94-4d3f-98be-80069215c6ca",
+      "timestamp": "2026-05-21T07:47:38Z",
+      "level": "info",
+      "message": "Step completed: code_implementer",
+      "stepKey": "code_implementer"
+    },
+    {
+      "id": "c4853a28-ffb4-4634-b96d-2fced9ef4b22",
+      "timestamp": "2026-05-21T07:47:38Z",
+      "level": "info",
+      "message": "Step started: ai_reviewer",
+      "stepKey": "ai_reviewer"
+    },
+    {
+      "id": "3a04e09b-9cd8-42c7-a1c0-01d39bba371c",
+      "timestamp": "2026-05-21T07:47:38Z",
+      "level": "info",
+      "message": "AI review disabled \u2014 skipping reviewer.",
+      "stepKey": "ai_reviewer"
+    },
+    {
+      "id": "b0f25581-52e4-4c0b-a088-449f0293a169",
+      "timestamp": "2026-05-21T07:47:38Z",
+      "level": "info",
+      "message": "Step completed: ai_reviewer",
+      "stepKey": "ai_reviewer"
+    },
+    {
+      "id": "7fde4b36-b02e-43be-a56a-def6c25bcc67",
+      "timestamp": "2026-05-21T07:47:38Z",
+      "level": "info",
+      "message": "Step started: final_review",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "242052cc-1bc4-4de9-ae3b-ac1c647d8c37",
+      "timestamp": "2026-05-21T07:47:38Z",
+      "level": "info",
+      "message": "Full working-tree diff artifact written: .opencode/executions/exec-78dad94f-416c-4df5-8a2c-77fbf2b5b888/working-tree.diff (~5.8k chars).",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "c35d1282-faad-43d9-a134-3d586d845dac",
+      "timestamp": "2026-05-21T07:47:38Z",
+      "level": "info",
+      "message": "Invoking ai-reviewer (final summary)\u2026",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "4fc1da37-993e-40a5-b14b-a8d88d2c9758",
+      "timestamp": "2026-05-21T07:47:39Z",
+      "level": "info",
+      "message": "Wrote Cursor context pack at .opencode/executions/exec-78dad94f-416c-4df5-8a2c-77fbf2b5b888/context-packs/final_review.md",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "c82784d0-3af7-4e17-97a8-b19b952a1ad3",
+      "timestamp": "2026-05-21T07:47:39Z",
+      "level": "info",
+      "message": "Capturing raw Cursor stream at .opencode/executions/exec-78dad94f-416c-4df5-8a2c-77fbf2b5b888/cursor-streams/final_review-20260521T074739Z-240a9bc6.jsonl",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "ddbe3824-cfe7-4ce4-ab46-003fbaf7a39b",
+      "timestamp": "2026-05-21T07:47:44Z",
+      "level": "info",
+      "message": "[cursor] initialized model: Composer 2.5",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "2eed3a47-ab09-4099-a734-b63b18967282",
+      "timestamp": "2026-05-21T07:48:00Z",
+      "level": "info",
+      "message": "Reviewing TS-02 against the context pack and handoffs; opening full artifacts only where the budgeted context is insufficient.",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "7e8b09c6-4a84-4f83-bfdb-99cdb8388beb",
+      "timestamp": "2026-05-21T07:48:00Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "70952e88-d20d-4f82-9c2b-0732d448ff6a",
+      "timestamp": "2026-05-21T07:48:00Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "5b5fa146-2dc4-457f-97f9-b9c7f9faea3f",
+      "timestamp": "2026-05-21T07:48:01Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "efd1f1e7-bd24-4d56-8e16-13ca7da27570",
+      "timestamp": "2026-05-21T07:48:01Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "067a9777-04cb-404e-bdf5-87ab5ed2ed0b",
+      "timestamp": "2026-05-21T07:48:01Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "b4a25c64-e0ed-4478-adc2-254ef377e1b3",
+      "timestamp": "2026-05-21T07:48:01Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "2cf4f7e5-3dd2-4b1a-a390-cc8d2c86017b",
+      "timestamp": "2026-05-21T07:48:02Z",
+      "level": "info",
+      "message": "[tool] glob started",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "6d5b3c1e-b3db-4660-a79a-69b978e026e5",
+      "timestamp": "2026-05-21T07:48:02Z",
+      "level": "info",
+      "message": "[tool] glob completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "33ec7eff-51f1-4a4a-a06d-ecd22b88f65e",
+      "timestamp": "2026-05-21T07:48:06Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "1ac4d7b1-86b0-4573-9268-1977f5b1a86f",
+      "timestamp": "2026-05-21T07:48:06Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "fb4e9a71-240c-4b34-a0d1-91dccac8831c",
+      "timestamp": "2026-05-21T07:48:06Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "e0d6a3c9-9042-4df8-a187-bba47fb54a27",
+      "timestamp": "2026-05-21T07:48:07Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "4db53c48-cf5b-4ac3-a9db-2296e0841057",
+      "timestamp": "2026-05-21T07:48:07Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "c7bcc117-1526-42e3-bacb-aa8ad6353e28",
+      "timestamp": "2026-05-21T07:48:07Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "8ecb7802-c4b6-479f-a2da-541b71f21830",
+      "timestamp": "2026-05-21T07:48:08Z",
+      "level": "info",
+      "message": "[tool] glob started",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "6821b3eb-77c7-421d-beea-be0f6856c046",
+      "timestamp": "2026-05-21T07:48:08Z",
+      "level": "info",
+      "message": "[tool] glob completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "b3557292-6eb0-40fe-8a02-b0fc323f5e25",
+      "timestamp": "2026-05-21T07:48:15Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "9dc023a3-3875-46e7-89f7-f78bc36b922f",
+      "timestamp": "2026-05-21T07:48:15Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "331f096b-09e1-44cd-881b-2365c870a166",
+      "timestamp": "2026-05-21T07:48:16Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "0174a593-8b75-4940-927c-9f071e42ad42",
+      "timestamp": "2026-05-21T07:48:16Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "b5cc6cb7-aa6c-4d1d-9a5e-0c39290f96c9",
+      "timestamp": "2026-05-21T07:48:17Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "17a5ec2c-0e1d-4277-a390-fc522195b3b8",
+      "timestamp": "2026-05-21T07:48:17Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "194946be-bec1-4b57-b8ff-31088270d494",
+      "timestamp": "2026-05-21T07:48:39Z",
+      "level": "info",
+      "message": "Running validation commands from the implementation plan (read-only).",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "e006d8ac-bcd5-4d5a-bb42-6024c980c8eb",
+      "timestamp": "2026-05-21T07:48:39Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "be3a8f66-bbd0-4b8c-9962-35fa0dd2e2b4",
+      "timestamp": "2026-05-21T07:48:39Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "0f9031c0-6518-43a4-8819-9dc052ad9e01",
+      "timestamp": "2026-05-21T07:48:40Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "bc591dc5-198d-4e0a-b9f4-dfd936c982f2",
+      "timestamp": "2026-05-21T07:48:43Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "15b5332a-ae9d-4347-947d-88a26b372625",
+      "timestamp": "2026-05-21T07:48:45Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "ca8a979d-9c9e-4538-a536-3ff4ee7a3f11",
+      "timestamp": "2026-05-21T07:48:46Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "164f3080-5942-4541-b6c7-e7fe38c85d3e",
+      "timestamp": "2026-05-21T07:48:46Z",
+      "level": "info",
+      "message": "[tool] mcp started",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "fa79997c-a75b-4cd5-bcac-ee4af1872c0b",
+      "timestamp": "2026-05-21T07:48:46Z",
+      "level": "info",
+      "message": "[tool] mcp completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "5df8775b-096f-4116-b07b-2a3c1bdc3975",
+      "timestamp": "2026-05-21T07:49:38Z",
+      "level": "info",
+      "message": "Creating the final review plan from the analysis.",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "510d698d-026e-4955-baf8-08c53292d324",
+      "timestamp": "2026-05-21T07:49:38Z",
+      "level": "info",
+      "message": "[tool] createPlan started",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "5fe2fb50-c22b-4b33-9d2d-cd6a281e7242",
+      "timestamp": "2026-05-21T07:49:38Z",
+      "level": "info",
+      "message": "[tool] createPlan completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "039cecdf-b5c5-4a2a-bc98-fa9ce8957d2a",
+      "timestamp": "2026-05-21T07:49:38Z",
+      "level": "info",
+      "message": "[cursor] run completed",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "57855c8f-e336-49e2-9d9a-419da6ed3720",
+      "timestamp": "2026-05-21T07:49:39Z",
+      "level": "info",
+      "message": "Final summary written to .opencode/executions/exec-78dad94f-416c-4df5-8a2c-77fbf2b5b888/final-summary.md",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "c6d3cddf-b8a6-4897-9fb4-331fa445cdb1",
+      "timestamp": "2026-05-21T07:49:39Z",
+      "level": "info",
+      "message": "Wrote handoff at .opencode/executions/exec-78dad94f-416c-4df5-8a2c-77fbf2b5b888/handoffs/final_review.json",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "51a2770e-75f5-4946-ad7a-754cedfe1de7",
+      "timestamp": "2026-05-21T07:49:39Z",
+      "level": "info",
+      "message": "Step completed: final_review",
+      "stepKey": "final_review"
+    },
+    {
+      "id": "5f655879-e7e0-4b5e-ab8b-7ec51a7a3daa",
+      "timestamp": "2026-05-21T07:49:39Z",
+      "level": "info",
+      "message": "Step started: commit_push",
+      "stepKey": "commit_push"
+    },
+    {
+      "id": "26d31325-e649-4432-a883-3e9601f2d46f",
+      "timestamp": "2026-05-21T07:49:39Z",
+      "level": "info",
+      "message": "Automated commit and push are not performed here; use the manual commit action in the app.",
+      "stepKey": "commit_push"
+    },
+    {
+      "id": "dd57f6c3-3dfc-4681-84d5-a0446d0c27b4",
+      "timestamp": "2026-05-21T07:49:39Z",
+      "level": "info",
+      "message": "Execution ready for manual commit and push (automated git disabled).",
+      "stepKey": "commit_push"
+    },
+    {
+      "id": "d471dfbc-e080-4fcc-a877-67a16fb48748",
+      "timestamp": "2026-05-21T07:49:50Z",
+      "level": "info",
+      "message": "[GIT] Pushed 'feature/TS-02-add-customer-list-widget-to-dashboard-page' to origin.",
+      "stepKey": "commit_push"
+    },
+    {
+      "id": "07b88c78-f381-4618-bf57-658fc8b475e4",
+      "timestamp": "2026-05-21T07:49:50Z",
+      "level": "info",
+      "message": "[GIT] Step completed: commit_push",
+      "stepKey": "commit_push"
+    },
+    {
+      "id": "ced60cf4-b795-4b8f-b4f3-7bbd45f36123",
+      "timestamp": "2026-05-21T07:49:50Z",
+      "level": "info",
+      "message": "Execution completed",
+      "stepKey": "commit_push"
+    }
+  ],
+  "error": null,
+  "createdAt": "2026-05-21T07:43:14Z",
+  "updatedAt": "2026-05-21T17:19:16Z",
+  "pullRequest": {
+    "repositoryId": 82,
+    "repositoryFullName": "ganeshiprogrammer/training-data",
+    "number": 3,
+    "url": "https://github.com/ganeshiprogrammer/training-data/pull/3",
+    "status": "draft_created",
+    "draft": true,
+    "state": "open",
+    "headBranch": "feature/TS-02-add-customer-list-widget-to-dashboard-page",
+    "baseBranch": "main",
+    "createdAt": "2026-05-21T17:19:14.000Z",
+    "updatedAt": "2026-05-21T17:19:14.000Z",
+    "lastSyncedAt": "2026-05-21T17:19:16.158Z"
+  },
+  "pullRequestStatus": "draft_created"
+}

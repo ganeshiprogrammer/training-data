@@ -7,7 +7,7 @@
   "storyDescription": "User Story\nAs an administrator using AdminPro,\n\nI want to view a summary list of customers directly on the Dashboard page,\n\nSo that I can quickly see recent customer overviews without having to navigate away to the dedicated Customers tab.\n\nDescription & Scope\nWe need to add a new \"Recent Customers\" list widget to the main Dashboard view. Since the backend API endpoints for this data are still under development, this UI component should be populated entirely with mock data matching our current design system.\n\nThe widget should be placed below the existing metrics cards (or alongside the \"Recent Activity\" list, depending on the layout grid) and match the existing UI styling (clean white cards, specific typography, and standard avatar icons).\n\nUI & Design Specifications\nWidget Title: Recent Customers\n\nMock Data Fields per Row:\n\nAvatar: Circular badge with initials (e.g., \"DJ\" for David Jones), utilizing the existing theme colors (#3b82f6 or similar brand colors).\n\nCustomer Name: Bold text (e.g., David Jones).\n\nEmail Address: Secondary text below the name (e.g., david.j@example.com).\n\nStatus Badge: A small colored badge indicating account status (Active - Green, Pending - Yellow).\n\nList Limit: Display a maximum of 3 records to keep the dashboard concise.\n\nMock Data Payload (Frontend Implementation)\nPlease use this static JSON array within the component state to render the UI:\n\nJSON\n[\n  {\n    \"id\": 1,\n    \"name\": \"David Jones\",\n    \"initials\": \"DJ\",\n    \"email\": \"david.j@example.com\",\n    \"status\": \"Active\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Emma Watson\",\n    \"initials\": \"EW\",\n    \"email\": \"emma.w@example.com\",\n    \"status\": \"Active\"\n  },\n  {\n    \"id\": 3,\n    \"name\": \"Frank Miller\",\n    \"initials\": \"FM\",\n    \"email\": \"f.miller@example.com\",\n    \"status\": \"Pending\"\n  }\n]\nAcceptance Criteria\n[ ] UI Alignment: The widget seamlessly integrates into the dashboard layout and follows the styling of the \"Recent Activity\" section (consistent margins, borders, shadows, and fonts).\n\n[ ] Data Rendering: The widget successfully loops through and displays all 3 mock records.\n\n[ ] Status Badges: The status colors render correctly based on the mock data (Active = Green text/background, Pending = Yellow/Orange text/background).\n\n[ ] Responsiveness: The list scales correctly across standard desktop and laptop resolutions.\n\n[ ] No Backend Dependency: The component does not make any actual HTTP/API requests and relies purely on local state/mock files.",
   "baseBranch": "main",
   "branchName": "feature/TS-01-add-customer-list-widget-to-dashboard-page",
-  "worktreePath": null,
+  "worktreePath": "/Users/sameert/Documents/projects/learning/training-data/.opencode-worktrees/TS-01-add-customer-list-widget-to-dashboard-page",
   "provider": "opencode",
   "mode": "fast_story",
   "inputType": "jira_story",
@@ -39,23 +39,27 @@
     }
   },
   "status": "failed",
-  "currentStep": "prepare_branch",
+  "currentStep": "story_analyzer",
   "steps": [
     {
       "key": "prepare_branch",
-      "status": "failed",
-      "startedAt": "2026-05-21T07:40:24Z",
-      "completedAt": "2026-05-21T07:40:24Z",
-      "error": "The selected project has uncommitted changes. Resolve them before starting an execution worktree.",
+      "status": "completed",
+      "startedAt": "2026-05-21T07:40:43Z",
+      "completedAt": "2026-05-21T07:40:46Z",
+      "error": null,
       "statusReason": null
     },
     {
       "key": "story_analyzer",
-      "status": "pending",
-      "startedAt": null,
-      "completedAt": null,
-      "error": null,
-      "statusReason": null
+      "status": "failed",
+      "startedAt": "2026-05-21T07:42:35Z",
+      "completedAt": "2026-05-21T07:42:35Z",
+      "error": "Failed to start OpenCode: [Errno 2] No such file or directory: 'opencode'",
+      "statusReason": null,
+      "promptCharCount": 23490,
+      "estimatedPromptTokens": 5873,
+      "promptTokenCount": 5874,
+      "tokenCounterSource": "chars/4"
     },
     {
       "key": "implementation_planner",
@@ -138,9 +142,247 @@
       "level": "info",
       "message": "Step failed: prepare_branch: The selected project has uncommitted changes. Resolve them before starting an execution worktree.",
       "stepKey": "prepare_branch"
+    },
+    {
+      "id": "4bba0015-d3ed-4fb0-b8b5-e2e052dc6e7e",
+      "timestamp": "2026-05-21T07:40:43Z",
+      "level": "info",
+      "message": "Retry scheduled for failed step: prepare_branch",
+      "stepKey": "prepare_branch"
+    },
+    {
+      "id": "bc0412ec-0449-4738-88cc-3cc57ef88d32",
+      "timestamp": "2026-05-21T07:40:43Z",
+      "level": "info",
+      "message": "Step started: prepare_branch",
+      "stepKey": "prepare_branch"
+    },
+    {
+      "id": "7e4f4dab-cef1-42a9-b03a-adef5afce382",
+      "timestamp": "2026-05-21T07:40:43Z",
+      "level": "info",
+      "message": "Preparing isolated git worktree and feature branch\u2026",
+      "stepKey": "prepare_branch"
+    },
+    {
+      "id": "d0d0d19c-1537-4e1d-92fd-c61b4e78fedc",
+      "timestamp": "2026-05-21T07:40:46Z",
+      "level": "info",
+      "message": "Worktree ready at /Users/sameert/Documents/projects/learning/training-data/.opencode-worktrees/TS-01-add-customer-list-widget-to-dashboard-page on branch 'feature/TS-01-add-customer-list-widget-to-dashboard-page'.",
+      "stepKey": "prepare_branch"
+    },
+    {
+      "id": "ed3155be-dac6-4758-a618-f0f6a49ed201",
+      "timestamp": "2026-05-21T07:40:46Z",
+      "level": "info",
+      "message": "Step completed: prepare_branch",
+      "stepKey": "prepare_branch"
+    },
+    {
+      "id": "35a749cc-d50c-406b-a442-d529c3d2fcb9",
+      "timestamp": "2026-05-21T07:40:46Z",
+      "level": "info",
+      "message": "Step started: story_analyzer",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "322c857b-5d2d-4b44-b9ba-02fa77de68f7",
+      "timestamp": "2026-05-21T07:40:46Z",
+      "level": "info",
+      "message": "Invoking story-analyzer \u2192 docs/ai/stories/TS-01/spec.md",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "719824c9-79ba-49c8-8cf2-a391fd244316",
+      "timestamp": "2026-05-21T07:40:46Z",
+      "level": "error",
+      "message": "Failed to start OpenCode: [Errno 2] No such file or directory: 'opencode'",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "cc99edb5-beb0-429f-84eb-b745532051dd",
+      "timestamp": "2026-05-21T07:40:46Z",
+      "level": "info",
+      "message": "Step failed: story_analyzer: Failed to start OpenCode: [Errno 2] No such file or directory: 'opencode'",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "82a9f230-b48a-46cd-b34b-ed5bc7c26370",
+      "timestamp": "2026-05-21T07:40:52Z",
+      "level": "info",
+      "message": "Retry scheduled for failed step: story_analyzer",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "4ce2eb03-461d-4308-a7ba-6979b980cb97",
+      "timestamp": "2026-05-21T07:40:52Z",
+      "level": "info",
+      "message": "Step started: story_analyzer",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "e51593ac-2cc6-480f-bf7d-b80d67e35dcf",
+      "timestamp": "2026-05-21T07:40:52Z",
+      "level": "info",
+      "message": "Invoking story-analyzer \u2192 docs/ai/stories/TS-01/spec.md",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "9abbac40-2434-43e4-97bf-dcce81b18403",
+      "timestamp": "2026-05-21T07:40:52Z",
+      "level": "error",
+      "message": "Failed to start OpenCode: [Errno 2] No such file or directory: 'opencode'",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "dca257ee-7fcc-4f46-a1b0-2c1ac4ad851d",
+      "timestamp": "2026-05-21T07:40:52Z",
+      "level": "info",
+      "message": "Step failed: story_analyzer: Failed to start OpenCode: [Errno 2] No such file or directory: 'opencode'",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "7b56021a-8fbd-4c0d-86ec-8d3899410562",
+      "timestamp": "2026-05-21T07:41:16Z",
+      "level": "info",
+      "message": "Retry scheduled for failed step: story_analyzer",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "c825e75d-6bd8-475a-8a41-58485a93c1ef",
+      "timestamp": "2026-05-21T07:41:16Z",
+      "level": "info",
+      "message": "Step started: story_analyzer",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "a07a53a7-9cad-409b-847d-f9d175758638",
+      "timestamp": "2026-05-21T07:41:16Z",
+      "level": "info",
+      "message": "Invoking story-analyzer \u2192 docs/ai/stories/TS-01/spec.md",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "8ae1be8a-354b-42b5-a1d4-59e1be595b58",
+      "timestamp": "2026-05-21T07:41:16Z",
+      "level": "error",
+      "message": "Failed to start OpenCode: [Errno 2] No such file or directory: 'opencode'",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "4229dcdb-4dde-4e71-8b07-f8a71e6535e3",
+      "timestamp": "2026-05-21T07:41:16Z",
+      "level": "info",
+      "message": "Step failed: story_analyzer: Failed to start OpenCode: [Errno 2] No such file or directory: 'opencode'",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "c275c946-c9c3-4a39-a2a8-7c50a00d5e53",
+      "timestamp": "2026-05-21T07:41:30Z",
+      "level": "info",
+      "message": "Retry scheduled for failed step: story_analyzer",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "4cb05e03-8137-424a-bd14-fb83c6264dbd",
+      "timestamp": "2026-05-21T07:41:30Z",
+      "level": "info",
+      "message": "Step started: story_analyzer",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "64823d5b-202c-47b8-86ac-c8fef15273cf",
+      "timestamp": "2026-05-21T07:41:30Z",
+      "level": "info",
+      "message": "Invoking story-analyzer \u2192 docs/ai/stories/TS-01/spec.md",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "4924536e-a28f-4309-9262-89ed97a92077",
+      "timestamp": "2026-05-21T07:41:30Z",
+      "level": "error",
+      "message": "Failed to start OpenCode: [Errno 2] No such file or directory: 'opencode'",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "f364d9cd-03b9-4a19-baa2-49473e9a9a66",
+      "timestamp": "2026-05-21T07:41:30Z",
+      "level": "info",
+      "message": "Step failed: story_analyzer: Failed to start OpenCode: [Errno 2] No such file or directory: 'opencode'",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "55e35511-63c1-4e2e-86be-5b862a490e00",
+      "timestamp": "2026-05-21T07:41:55Z",
+      "level": "info",
+      "message": "Retry scheduled for failed step: story_analyzer",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "ce99010c-ec34-43bf-8a6f-c2f5dc93a6ee",
+      "timestamp": "2026-05-21T07:41:55Z",
+      "level": "info",
+      "message": "Step started: story_analyzer",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "af897003-81eb-4388-b264-98a758ce5f4d",
+      "timestamp": "2026-05-21T07:41:55Z",
+      "level": "info",
+      "message": "Invoking story-analyzer \u2192 docs/ai/stories/TS-01/spec.md",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "88926161-6624-4f51-95e4-88334552a50c",
+      "timestamp": "2026-05-21T07:41:55Z",
+      "level": "error",
+      "message": "Failed to start OpenCode: [Errno 2] No such file or directory: 'opencode'",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "a81fa1dd-3f7b-4c64-9a7e-3cab64bbf1f5",
+      "timestamp": "2026-05-21T07:41:55Z",
+      "level": "info",
+      "message": "Step failed: story_analyzer: Failed to start OpenCode: [Errno 2] No such file or directory: 'opencode'",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "33c32872-ba6f-4d56-a66e-5049bb94a3ad",
+      "timestamp": "2026-05-21T07:42:35Z",
+      "level": "info",
+      "message": "Retry scheduled for failed step: story_analyzer",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "808dd256-21a2-4926-849f-11e84ee2b45e",
+      "timestamp": "2026-05-21T07:42:35Z",
+      "level": "info",
+      "message": "Step started: story_analyzer",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "8efa1998-3162-4942-a1c1-85b57363d2a5",
+      "timestamp": "2026-05-21T07:42:35Z",
+      "level": "info",
+      "message": "Invoking story-analyzer \u2192 docs/ai/stories/TS-01/spec.md",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "b6cdfd67-95ed-4d57-b5ed-51bc2f6f26dc",
+      "timestamp": "2026-05-21T07:42:35Z",
+      "level": "error",
+      "message": "Failed to start OpenCode: [Errno 2] No such file or directory: 'opencode'",
+      "stepKey": "story_analyzer"
+    },
+    {
+      "id": "201cbd92-eeff-45e3-a9bd-12461b91419b",
+      "timestamp": "2026-05-21T07:42:35Z",
+      "level": "info",
+      "message": "Step failed: story_analyzer: Failed to start OpenCode: [Errno 2] No such file or directory: 'opencode'",
+      "stepKey": "story_analyzer"
     }
   ],
-  "error": "The selected project has uncommitted changes. Resolve them before starting an execution worktree.",
+  "error": "Failed to start OpenCode: [Errno 2] No such file or directory: 'opencode'",
   "createdAt": "2026-05-21T07:40:24Z",
-  "updatedAt": "2026-05-21T07:40:24Z"
+  "updatedAt": "2026-05-21T07:42:35Z"
 }

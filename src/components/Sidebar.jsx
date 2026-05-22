@@ -1,12 +1,21 @@
 // src/components/Sidebar.jsx
+import { useLocation, Link } from "react-router-dom";
+
 export default function Sidebar() {
+  const location = useLocation();
+
   const navItems = [
-    { label: "Dashboard", icon: "🏠", active: true, testId: "nav-dashboard" },
-    { label: "Analytics", icon: "📊", active: false, testId: "nav-analytics" },
-    { label: "Orders", icon: "📦", active: false, testId: "nav-orders" },
-    { label: "Customers", icon: "👥", active: false, testId: "nav-customers" },
-    { label: "Settings", icon: "⚙️", active: false, testId: "nav-settings" },
+    { label: "Dashboard", icon: "🏠", path: "/dashboard", testId: "nav-dashboard" },
+    { label: "Analytics", icon: "📊", path: "/analytics", testId: "nav-analytics" },
+    { label: "Orders", icon: "📦", path: "/orders", testId: "nav-orders" },
+    { label: "Customers", icon: "👥", path: "/customers", testId: "nav-customers" },
+    { label: "Settings", icon: "⚙️", path: "/settings", testId: "nav-settings" },
+    { label: "About", icon: "ℹ️", path: "/about", testId: "nav-about" },
   ];
+
+  const isActive = (item) =>
+    location.pathname === item.path ||
+    (item.path === "/dashboard" && location.pathname === "/");
 
   return (
     <aside
@@ -31,29 +40,32 @@ export default function Sidebar() {
 
       {/* Nav */}
       <nav data-testid="sidebar-nav">
-        {navItems.map((item) => (
-          <a
-            key={item.label}
-            href="#"
-            data-testid={item.testId}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "12px",
-              padding: "12px 24px",
-              color: item.active ? "#fff" : "#9ca3af",
-              background: item.active ? "rgba(79,70,229,0.3)" : "transparent",
-              textDecoration: "none",
-              fontSize: "14px",
-              fontWeight: item.active ? 600 : 400,
-              borderLeft: item.active ? "3px solid #4f46e5" : "3px solid transparent",
-              transition: "all 0.2s",
-            }}
-          >
-            <span>{item.icon}</span>
-            {item.label}
-          </a>
-        ))}
+        {navItems.map((item) => {
+          const active = isActive(item);
+          return (
+            <Link
+              key={item.label}
+              to={item.path}
+              data-testid={item.testId}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "12px",
+                padding: "12px 24px",
+                color: active ? "#fff" : "#9ca3af",
+                background: active ? "rgba(79,70,229,0.3)" : "transparent",
+                textDecoration: "none",
+                fontSize: "14px",
+                fontWeight: active ? 600 : 400,
+                borderLeft: active ? "3px solid #4f46e5" : "3px solid transparent",
+                transition: "all 0.2s",
+              }}
+            >
+              <span>{item.icon}</span>
+              {item.label}
+            </Link>
+          );
+        })}
       </nav>
 
       {/* User Info at Bottom */}

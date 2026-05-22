@@ -51,6 +51,7 @@ test.describe("Dashboard - Page Load", () => {
       "nav-orders",
       "nav-customers",
       "nav-settings",
+      "nav-about",
     ];
 
     for (const testId of navLinks) {

@@ -8,6 +8,7 @@ import Sidebar from "../components/Sidebar";
 import StatCard from "../components/StateCard";
 import RecentActivity from "../components/RecentActivity";
 import RecentCustomers from "../components/RecentCustomers";
+import ActiveUsersOverview from "../components/ActiveUsersOverview";
 
 const stats = [
   {
@@ -208,6 +209,9 @@ export default function Dashboard() {
 
         {/* Recent Customers */}
         <RecentCustomers />
+
+        {/* Active Users Overview */}
+        <ActiveUsersOverview />
       </main>
     </div>
     </>

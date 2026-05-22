@@ -40,7 +40,7 @@
     },
     "reviewState": {}
   },
-  "status": "ready_for_commit",
+  "status": "completed",
   "currentStep": "commit_push",
   "steps": [
     {
@@ -143,9 +143,9 @@
     },
     {
       "key": "commit_push",
-      "status": "pending",
-      "startedAt": null,
-      "completedAt": null,
+      "status": "completed",
+      "startedAt": "2026-05-22T06:56:14Z",
+      "completedAt": "2026-05-22T06:56:14Z",
       "error": null,
       "statusReason": null
     }
@@ -1289,9 +1289,45 @@
       "level": "info",
       "message": "Execution ready for manual commit and push (automated git disabled).",
       "stepKey": "commit_push"
+    },
+    {
+      "id": "1313244d-c93a-4f29-8d33-c92903dba0ba",
+      "timestamp": "2026-05-22T06:56:14Z",
+      "level": "info",
+      "message": "[GIT] Pushed 'feature/new' to origin.",
+      "stepKey": "commit_push"
+    },
+    {
+      "id": "a2d9c78f-9814-4afe-b579-aefeb4c7b2bb",
+      "timestamp": "2026-05-22T06:56:14Z",
+      "level": "info",
+      "message": "[GIT] Step completed: commit_push",
+      "stepKey": "commit_push"
+    },
+    {
+      "id": "7a2d552e-c725-46e7-83e3-76c0072f3721",
+      "timestamp": "2026-05-22T06:56:14Z",
+      "level": "info",
+      "message": "Execution completed",
+      "stepKey": "commit_push"
     }
   ],
   "error": null,
   "createdAt": "2026-05-22T06:32:50Z",
-  "updatedAt": "2026-05-22T06:56:04Z"
+  "updatedAt": "2026-05-22T06:56:21Z",
+  "pullRequest": {
+    "repositoryId": 82,
+    "repositoryFullName": "ganeshiprogrammer/training-data",
+    "number": 4,
+    "url": "https://github.com/ganeshiprogrammer/training-data/pull/4",
+    "status": "draft_created",
+    "draft": true,
+    "state": "open",
+    "headBranch": "feature/new",
+    "baseBranch": "main",
+    "createdAt": "2026-05-22T06:56:20.000Z",
+    "updatedAt": "2026-05-22T06:56:20.000Z",
+    "lastSyncedAt": "2026-05-22T06:56:21.420Z"
+  },
+  "pullRequestStatus": "draft_created"
 }

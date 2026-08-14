@@ -1,10 +1,13 @@
 // src/components/Sidebar.jsx
+import { Link } from "react-router-dom";
+
 export default function Sidebar() {
   const navItems = [
     { label: "Dashboard", icon: "🏠", active: true, testId: "nav-dashboard" },
     { label: "Analytics", icon: "📊", active: false, testId: "nav-analytics" },
     { label: "Orders", icon: "📦", active: false, testId: "nav-orders" },
     { label: "Customers", icon: "👥", active: false, testId: "nav-customers" },
+    { label: "Users", icon: "👤", active: false, testId: "nav-users" },
     { label: "Settings", icon: "⚙️", active: false, testId: "nav-settings" },
   ];
 
@@ -31,29 +34,53 @@ export default function Sidebar() {
 
       {/* Nav */}
       <nav data-testid="sidebar-nav">
-        {navItems.map((item) => (
-          <a
-            key={item.label}
-            href="#"
-            data-testid={item.testId}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "12px",
-              padding: "12px 24px",
-              color: item.active ? "#fff" : "#9ca3af",
-              background: item.active ? "rgba(79,70,229,0.3)" : "transparent",
-              textDecoration: "none",
-              fontSize: "14px",
-              fontWeight: item.active ? 600 : 400,
-              borderLeft: item.active ? "3px solid #4f46e5" : "3px solid transparent",
-              transition: "all 0.2s",
-            }}
-          >
-            <span>{item.icon}</span>
-            {item.label}
-          </a>
-        ))}
+        {navItems.map((item) =>
+          item.label === "Users" ? (
+            <Link
+              key={item.label}
+              to="/users"
+              data-testid={item.testId}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "12px",
+                padding: "12px 24px",
+                color: item.active ? "#fff" : "#9ca3af",
+                background: item.active ? "rgba(79,70,229,0.3)" : "transparent",
+                textDecoration: "none",
+                fontSize: "14px",
+                fontWeight: item.active ? 600 : 400,
+                borderLeft: item.active ? "3px solid #4f46e5" : "3px solid transparent",
+                transition: "all 0.2s",
+              }}
+            >
+              <span>{item.icon}</span>
+              {item.label}
+            </Link>
+          ) : (
+            <a
+              key={item.label}
+              href="#"
+              data-testid={item.testId}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "12px",
+                padding: "12px 24px",
+                color: item.active ? "#fff" : "#9ca3af",
+                background: item.active ? "rgba(79,70,229,0.3)" : "transparent",
+                textDecoration: "none",
+                fontSize: "14px",
+                fontWeight: item.active ? 600 : 400,
+                borderLeft: item.active ? "3px solid #4f46e5" : "3px solid transparent",
+                transition: "all 0.2s",
+              }}
+            >
+              <span>{item.icon}</span>
+              {item.label}
+            </a>
+          )
+        )}
       </nav>
 
       {/* User Info at Bottom */}

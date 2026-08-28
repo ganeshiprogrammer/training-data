@@ -7,6 +7,7 @@ import { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import StatCard from "../components/StateCard";
 import RecentActivity from "../components/RecentActivity";
+import RecentCustomers from "../components/RecentCustomers";
 
 const stats = [
   {
@@ -204,6 +205,9 @@ export default function Dashboard() {
 
           <RecentActivity activities={filteredActivities} />
         </section>
+
+        {/* Recent Customers */}
+        <RecentCustomers />
       </main>
     </div>
     </>
